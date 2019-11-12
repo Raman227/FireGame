@@ -16,7 +16,7 @@ namespace FireGame_Raman
         fire instance_obj = null;
 
         Random obj = new Random();
-        int rd = 0,clk=0,clk2=0;
+        int rd = 0,clk=0,clk2=0,sht = 0;
         public Form1()
         {
             
@@ -80,15 +80,17 @@ namespace FireGame_Raman
 
         private void Button4_Click(object sender, EventArgs e)
         {
+            
             // count the clik and then generate the sound of the bulllet 
             clk++;
+            sht++;
 
             instance_obj.frstchance();
 
 
             instance.fire(pictureBox1);
 
-            if (rd == clk)
+            if (rd == sht)
             {
                 MessageBox.Show("Shooted: You are dead ");
                 Application.Restart();
@@ -100,7 +102,7 @@ namespace FireGame_Raman
             
 
             // when we click six times then the trigger is automatically disabled
-            if (clk == 6)
+            if (sht == 6)
             {
                 MessageBox.Show("you survived ");
                 Application.Restart();
@@ -111,14 +113,14 @@ namespace FireGame_Raman
         private void Button5_Click(object sender, EventArgs e)
         {
             clk2++;
-            clk++;
+            sht++;
 
             instance_obj.frstchance();
 
             instance.fire(pictureBox1);
             
 
-            if (rd == clk2)
+            if (rd == sht)
             {
                 MessageBox.Show("you survived ");
                 Application.Restart();
